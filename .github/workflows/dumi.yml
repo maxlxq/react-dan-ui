@@ -22,5 +22,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build And Depoly
+      - name: Build
+        run: yarn install
+
+      - name: Depoly
         run: yarn deploy
