@@ -1,6 +1,6 @@
 import { defineConfig } from 'dumi';
 
-const repo = 'react-ui';
+const repo = 'react-dan-ui';
 const repo_url = 'https://github.com/maxlxq/react-dan-ui';
 
 export default defineConfig({
