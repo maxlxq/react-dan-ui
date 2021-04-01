@@ -20,20 +20,29 @@ jobs:
 
     strategy:
       matrix:
-        node: [ 14 ]
+        node: [ 12 ]
         os: [ ubuntu-latest ]
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v1
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
 
-      - name: Install and Build
+      - name: yarn install, build
         run: |
-          yarn install
-          yarn docs:build
+          yarn
+          yarn build
 
-      - name: Depoly
-        run: |
-          git config --local user.name "向前Hell"
-          git config --local user.email "542168513@qq.com"
-          yarn docs:deploy
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: main
+          FOLDER: dist
+          REPOSITORY_NAME: maxlxq/react-dan-ui
+          TARGET_FOLDER: /
+
+        env:
+          CI: true
