@@ -15,6 +15,10 @@ export default defineConfig({
   // Because of using GitHub Pages
   base: `/${repo}/`,
   publicPath: `/${repo}/`,
+  fastRefresh: {},
+  resolve: {
+    includes: ['docs', 'src/components'],
+  },
   navs: {
     'en-US': [
       null,
