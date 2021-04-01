@@ -33,13 +33,11 @@ jobs:
       - name: yarn install, build
         run: |
           yarn
-          yarn build
+          yarn docs:build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@master
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: dist
-          REPOSITORY_NAME: maxlxq/react-dan-ui
-          TARGET_FOLDER: /
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          folder: dics-dist
