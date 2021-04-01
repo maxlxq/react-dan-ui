@@ -16,14 +16,25 @@ on:
 
 jobs:
   build-and-depoly:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node: [ 14 ]
+        os: [ ubuntu-latest ]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
 
-      - name: Build
-        run: yarn install
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn build
 
       - name: Depoly
-        run: yarn deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
