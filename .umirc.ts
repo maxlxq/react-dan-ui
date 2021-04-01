@@ -23,6 +23,7 @@ export default defineConfig({
         children: [
           { title: 'one', path: `${repo_url}` },
           { title: 'two', path: `${repo_url}` },
+          { title: 'three', path: `${repo_url}` },
         ],
       },
       {
@@ -37,6 +38,7 @@ export default defineConfig({
         children: [
           { title: '一', path: `${repo_url}` },
           { title: '二', path: `${repo_url}` },
+          { title: '三', path: `${repo_url}` },
         ],
       },
       {

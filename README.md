@@ -1,5 +1,7 @@
 # 🌟 Dumi Template
 
+[![Build](https://img.shields.io/github/workflow/status/maxlxq/react-dan-ui/dumi/main?color=brightgreen)](https://github.com/maxlxq/react-dan-ui/actions)
+
 A doc template can assist you to develop libraries & write docs.
 
 English | [简体中文](./README.zh-CN.md)
