@@ -28,7 +28,7 @@ export default defineConfig({
       },
       {
         title: 'GitHub',
-        path: 'https://github.com/umijs/dumi-template',
+        path: 'https://github.com/maxlxq/react-dan-ui',
       },
     ],
     'zh-CN': [
@@ -43,7 +43,7 @@ export default defineConfig({
       },
       {
         title: 'GitHub',
-        path: 'https://github.com/umijs/dumi-template',
+        path: 'https://github.com/maxlxq/react-dan-ui',
       },
     ],
   },
