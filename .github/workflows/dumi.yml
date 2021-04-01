@@ -37,12 +37,9 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@master
-        with:
+        env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: main
           FOLDER: dist
           REPOSITORY_NAME: maxlxq/react-dan-ui
           TARGET_FOLDER: /
-
-        env:
-          CI: true
