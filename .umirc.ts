@@ -1,6 +1,7 @@
 import { defineConfig } from 'dumi';
 
-const repo = 'dumi-template';
+const repo = 'react-ui';
+const repo_url = 'https://github.com/maxlxq/react-dan-ui';
 
 export default defineConfig({
   title: repo,
@@ -14,12 +15,35 @@ export default defineConfig({
   // Because of using GitHub Pages
   base: `/${repo}/`,
   publicPath: `/${repo}/`,
-  navs: [
-    null,
-    {
-      title: 'GitHub',
-      path: 'https://github.com/umijs/dumi-template',
-    },
-  ],
+  navs: {
+    'en-US': [
+      null,
+      {
+        title: 'Test',
+        children: [
+          { title: 'one', path: `${repo_url}` },
+          { title: 'two', path: `${repo_url}` },
+        ],
+      },
+      {
+        title: 'GitHub',
+        path: 'https://github.com/umijs/dumi-template',
+      },
+    ],
+    'zh-CN': [
+      null,
+      {
+        title: '测试',
+        children: [
+          { title: '一', path: `${repo_url}` },
+          { title: '二', path: `${repo_url}` },
+        ],
+      },
+      {
+        title: 'GitHub',
+        path: 'https://github.com/umijs/dumi-template',
+      },
+    ],
+  },
   // more config: https://d.umijs.org/config
 });
