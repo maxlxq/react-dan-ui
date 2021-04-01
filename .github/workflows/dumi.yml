@@ -14,12 +14,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
+      - name: blog-deploy
+        uses: maxlxq/blog-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: maxlxq/react-dan-ui
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: yarn && yarn docs:build
           BUILD_DIR: docs-dist/
-          COMMIT_MESSAGE: Auto deploy from GitHub Actions
+          COMMIT_MESSAGE: Use blog-deploy action
